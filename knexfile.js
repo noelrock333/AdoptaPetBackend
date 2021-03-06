@@ -34,11 +34,7 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    connection: {
-      database: 'adopta_pet',
-      user:     'noel',
-      password: '123'
-    },
+    connection: process.env.DATABASE_URL || 'postgres://postgres@127.0.0.1:5432/adopta_pet',
     pool: {
       min: 2,
       max: 10

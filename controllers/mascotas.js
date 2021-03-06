@@ -1,11 +1,10 @@
 const knexFile = require('../knexfile')
-const knex = require('knex')(knexFile.development);
+const knex = require('knex')(knexFile.production);
 const Mascota = require('../models/Mascota');
 
 async function crearMascota(req, res) {
   // Instanciaremos una nueva mascota utilizando la clase Mascota
   // var mascota = new Mascota(req.body)
-  console.log(req.body)
   await knex('mascotas').insert(req.body);
   res.status(201).send(true)
 }
