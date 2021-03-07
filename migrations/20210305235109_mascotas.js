@@ -4,10 +4,10 @@ exports.up = function(knex) {
     .createTable('mascotas', function (table) {
       table.increments('id').primary();
       table.string('nombre', 255);
-      table.string('categoria', 255);
+      // table.string('categoria', 255);
       table.string('foto');
-      table.string('descripcion');
-      table.string('anunciante');
+      // table.string('descripcion');
+      // table.string('anunciante');
       table.string('ubicacion');
     })
 };

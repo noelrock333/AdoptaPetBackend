@@ -33,15 +33,11 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: process.env.DATABASE_URL + '?ssl=true' || 'postgres://postgres@127.0.0.1:5432/adopta_pet',
-    pool: {
-      min: 2,
-      max: 10
+    client: 'sqlite3',
+    connection: {
+      filename: "./adoptapet_db.sqlite"
     },
-    migrations: {
-      tableName: 'knex_migrations'
-    },
+    useNullAsDefault: true
   }
 
 };

@@ -1,5 +1,5 @@
 const knexFile = require('../knexfile')
-const knex = require('knex')(knexFile.production);
+const knex = require('knex')(knexFile[process.env.NODE_ENV || 'development']);
 const Mascota = require('../models/Mascota');
 
 async function crearMascota(req, res) {
